@@ -33,8 +33,11 @@ def create_aluno(*args):
     return db.execute(sql, args=args)
 
 
-def update_aluno():
-    pass
+def update_aluno(**kwargs):
+    sql = f'UPDATE {TNAMES["alunos"]} '
+    sql += 'SET nome_aluno = %s, email = %s, logadouro = %s, numero = %s, cep = %s, complemento = %s WHERE ra = %s'
+    args = (kwargs['nome'], kwargs['email'], kwargs['log'], kwargs['num'], kwargs['cep'], kwargs['comp'], kwargs['ra'],)
+    return db.execute(sql, args=args)
 
 
 def delete_aluno(ra):

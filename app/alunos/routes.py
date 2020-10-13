@@ -1,6 +1,6 @@
 from flask import request, render_template, redirect, abort, url_for
 from app import db
-from dao import read_aluno, read_alunos, create_aluno, delete_aluno
+from dao import read_aluno, read_alunos, create_aluno, delete_aluno, update_aluno
 from app.alunos import bp
 
 
@@ -28,9 +28,19 @@ def add_aluno(ra):
         return {}, 409
     f = request.form
     args = (ra, f['nome'], f['email'], f['log'], f['num'], f['cep'], f['comp'])
-    print(args)
     aluno = create_aluno(*args)
     return render_template('view_aluno.html', aluno=aluno)
+
+
+@bp.route('/<int:ra>/', methods=['PATCH'])
+def atualizar_aluno(ra):
+    aluno = read_aluno(ra)
+    if not aluno:
+        return {}, 404
+    kwargs = dict(request.form)
+    kwargs['ra'] = ra
+    update_aluno(**kwargs)
+    return {}, 204
 
 
 @bp.route('/<int:ra>/', methods=['DELETE'])

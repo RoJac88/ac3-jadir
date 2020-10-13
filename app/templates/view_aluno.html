@@ -19,11 +19,15 @@
     <span class="card--key">logadouro: </span><span class="card--value">{{aluno['logadouro']}}</span>
   </div>
   <div>
+    <span class="card--key">nº: </span><span class="card--value">{{aluno['numero']}}</span>
+  </div>
+  <div>
     <span class="card--key">complemento: </span><span class="card--value">{{aluno['complemento']}}</span>
   </div>
   <div class="card--actions">
     <div class="btn btn--edit">Editar</div>
-    <div class="btn btn--delete" data-href="{{url_for('alunos.remove_aluno', ra=aluno['ra'])}}">Apagar</div>
+    <div class="btn btn--delete">Apagar</div>
   </div>
 </div>
+{% include '_edit_aluno.html' %}
 {% endblock %}
