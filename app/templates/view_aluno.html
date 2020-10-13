@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block script %}
+<script src="{{url_for('static', filename='view_aluno.js')}}" defer></script>
+{% endblock %}
 {% block content %}
 <div class="title">Ver Aluno</div>
 <div class="card" style="margin: auto;">
@@ -17,6 +20,10 @@
   </div>
   <div>
     <span class="card--key">complemento: </span><span class="card--value">{{aluno['complemento']}}</span>
+  </div>
+  <div class="card--actions">
+    <div class="btn btn--edit">Editar</div>
+    <div class="btn btn--delete" data-href="{{url_for('alunos.remove_aluno', ra=aluno['ra'])}}">Apagar</div>
   </div>
 </div>
 {% endblock %}

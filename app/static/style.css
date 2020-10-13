@@ -51,7 +51,21 @@ main {
     border-radius: 5px;
 }
 
-.main-btn {
+.btn--delete {
+    border-color: var(--color-red);
+    padding: 8px 16px;
+    color: var(--color-red);
+    font-weight: 550;
+}
+
+.btn--edit {
+    border-color: var(--color-green);
+    padding: 8px 16px;
+    color: var(--color-green);
+    font-weight: 550;
+}
+
+.btn--main {
     background-color: var(--color-bg);
     border-color: var(--color-purple);
     padding: 8px 16px;
@@ -119,6 +133,12 @@ main {
     color: var(--color-com);
 }
 
+.card--actions {
+    display: flex;
+    margin-top: 6px;
+    justify-content: space-around;
+}
+
 .card--key {
     color: var(--color-orange);
 }
@@ -177,6 +197,7 @@ main {
 }
 
 .form--wrap {
+    display: none;
     width: 480px;
     height: fit-content;
     margin: 0 auto;

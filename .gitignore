@@ -33,7 +33,7 @@ nosetests.xml
 
 venv
 app.db
-.env
+*.env
 
 # SQL
 *.sql

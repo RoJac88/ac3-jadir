@@ -39,4 +39,4 @@ def update_aluno():
 
 def delete_aluno(ra):
     sql = 'DELETE FROM '+ TNAMES['alunos'] +' WHERE ra = %s'
-    return db.query(sql)
+    return db.query(sql, args=(ra,))

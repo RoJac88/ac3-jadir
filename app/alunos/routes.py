@@ -1,4 +1,4 @@
-from flask import request, render_template, jsonify, abort
+from flask import request, render_template, redirect, abort, url_for
 from app import db
 from dao import read_aluno, read_alunos, create_aluno, delete_aluno
 from app.alunos import bp
@@ -21,7 +21,7 @@ def ver_aluno(ra):
     return {'message': f'aluno {ra} removido'}
 
 
-@bp.route('/<int:ra>', methods=['PUT'])
+@bp.route('/<int:ra>/', methods=['PUT'])
 def add_aluno(ra):
     aluno = read_aluno(ra)
     if aluno:
@@ -31,3 +31,12 @@ def add_aluno(ra):
     print(args)
     aluno = create_aluno(*args)
     return render_template('view_aluno.html', aluno=aluno)
+
+
+@bp.route('/<int:ra>/', methods=['DELETE'])
+def remove_aluno(ra):
+    aluno = read_aluno(ra)
+    if not aluno:
+        return {}, 404
+    delete_aluno(ra)
+    return {}, 204

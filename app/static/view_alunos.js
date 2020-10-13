@@ -13,6 +13,7 @@ function showForm() {
   const backdrop = document.querySelector('.form--backdrop')
   backdrop.style.pointerEvents = 'auto'
   backdrop.style.backgroundColor = 'rgba(0,0,0, 0.8)'
+  formWrap.style.display = 'block'
   formWrap.style.transform = 'translateY(200px)'
   backdrop.addEventListener('click', () => {
     formWrap.style.transform = 'translateY(-380px)'
