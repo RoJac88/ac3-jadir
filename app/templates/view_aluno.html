@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="title">Ver Aluno</div>
+<div class="card" style="margin: auto;">
+  <div class="card--title">{{aluno['nome_aluno']}}</div>
+  <div>
+    <span class="card--key">RA: </span><span class="card--value">{{aluno['ra']}}</span>
+  </div>
+  <div>
+    <span class="card--key">e-mail: </span><span class="card--value">{{aluno['email']}}</span>
+  </div>
+  <div>
+    <span class="card--key">cep: </span><span class="card--value">{{aluno['cep']}}</span>
+  </div>
+  <div>
+    <span class="card--key">logadouro: </span><span class="card--value">{{aluno['logadouro']}}</span>
+  </div>
+  <div>
+    <span class="card--key">complemento: </span><span class="card--value">{{aluno['complemento']}}</span>
+  </div>
+</div>
+{% endblock %}

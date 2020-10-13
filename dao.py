@@ -11,7 +11,7 @@ def read_tablenames():
 
 
 def read_table_columns(table_name):
-    sql = 'SELECT column_name FROM information_schema.columns WHERE table_name = %s'
+    sql = 'SELECT column_name, data_type, character_maximum_length FROM information_schema.columns WHERE table_name = %s'
     args = (table_name,)
     return db.query(sql, args=args)
 
@@ -24,7 +24,7 @@ def read_alunos():
 def read_aluno(ra):
     sql = 'SELECT * FROM ' + TNAMES['alunos'] + ' WHERE ra = %s'
     args = (ra,)
-    return db.query(sql, args=args)
+    return db.query(sql, args=args, one=True)
 
 
 def create_aluno(*args):

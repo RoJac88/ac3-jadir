@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% set types = {
+  'character varying': 'VARCHAR',
+  'integer': 'INT'
+} %}
+{% block content %}
+<div class="title">Tabelas</div>
+<div class=table-grid>
+{% for table in db_data %}
+  <div class="card">
+    <div class="card--title">{{table['name']}}</div>
+    <div>
+      {% for col in table['cols'] %}
+      <div>
+        <span class="card--key">{{col['name']}}:</span>
+        <span class="card--value">{{types[col['type']] or col['type']}}</span>
+        {% if 'max_len' in col and col['max_len'] %}<span class="card--value">({{col['max_len']}})</span>{% endif %}
+      </div>
+      {% endfor %}
+      <div class="card--extra">
+        {% for k, v in table['meta'].items() %}
+        <div><span>{{k}}:</span><span> {{v}}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

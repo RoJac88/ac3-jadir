@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
   {% block style %}{% endblock %}
   {% block script %}{% endblock %}
-  <title>Flask Boilerplate</title>
+  <title>CRUD</title>
 </head>
 <body>
-  {% block content %}{% endblock %}
+  <div class="top-bar"><img src="{{url_for('static', filename='app-icon.png')}}" width='22' height='22'>CRUD APP</div>
+  <main>{% block content %}{% endblock %}</main>
 </body>
 </html>

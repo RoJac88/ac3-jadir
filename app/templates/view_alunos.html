@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block script %}<script src="{{url_for('static', filename='view_alunos.js')}}" defer></script>{% endblock %}
+{% block content %}
+<div class="title">
+  <span>Alunos</span>
+</div>
+<div class="btn main-btn" id="show-form">Criar Aluno</div>
+<div class="collection">
+  {% for aluno in alunos %}
+  {% include '_item_aluno.html' %}
+  {% endfor %}
+</div>
+<div class="form--backdrop">
+  <div class="form--wrap">
+    <div class="form--title">Novo Aluno</div>
+    <form class="form">
+      <div>
+        <label for="ra">RA:</label>
+        <input name="ra" type="text">
+      </div>
+      <div>
+        <label for="nome">Nome:</label>
+        <input name="nome" type="text">
+      </div>
+      <div>
+        <label for="email">email:</label>
+        <input name="email" type="email">
+      </div>
+      <div>
+        <label for="log">logadouro:</label>
+        <input name="log" type="text">
+      </div>
+      <div>
+        <label for="num">Nº:</label>
+        <input name="num" type="number">
+      </div>
+      <div>
+        <label for="cep">CEP:</label>
+        <input name="cep" type="number">
+      </div>
+      <div>
+        <label for="comp">complemento:</label>
+        <input name="comp" type="text">
+      </div>
+      <div class="btn" id="submit">Enviar</div>
+    </form>
+  </div>
+</div>
+{% endblock %}
