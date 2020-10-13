@@ -34,6 +34,7 @@ function sendForm() {
   })
 
   const ra = form.get('ra')
-  XHR.open( "PUT", "/alunos/" + ra )
+  const path = `${location.href}${ra}/`
+  XHR.open( "PUT", path)
   XHR.send(form)
 }
