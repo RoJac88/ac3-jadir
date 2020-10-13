@@ -38,48 +38,131 @@ a {
 main {
     width: 100%;
     max-width: 1200px;
+    min-height: 80vh;
     margin: auto;
 }
 
+footer {
+    background-color: var(--color-lbg);
+    border-radius: 15px;
+    padding: 1.5rem 3rem;
+}
+
+.foot--top {
+    display: flex;
+    justify-content: space-around;
+}
+
+.foot-section {
+    max-width: 50vw;
+    color: var(--color-com);
+}
+
+.foot-section img {
+    height: 48px;
+    display: block;
+    margin: 100% auto 0 auto;
+}
+
+.logo-text {
+    margin-top: .5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8rem;
+    color: black;
+    font-family: 'Monaco', 'Cascadia Code', 'Cascadia', 'monospace';
+}
+
+.foot-section--title {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-fg);
+}
+
+.foot-section--content {
+    text-align: justify;
+}
+
+.foot-section--items {
+    padding-left: 1rem;
+    list-style-type: square;
+    list-style-position: outside;
+}
+
+.foot-section--items li {
+    margin: 8px 0;
+}
+
 .btn {
-    margin: 1rem auto 0;
     cursor: pointer;
     width: fit-content;
     padding: 4px 8px;
     color: var(--color-cyan);
     border: 2px solid var(--color-cyan);
     border-radius: 5px;
+    font-weight: 550;
+}
+
+.btn--top {
+    transition: background-color 300ms, color 300ms;
+    font-size: .9rem;
+    color: var(--color-lbg);
+    margin-right: 2rem;
+    border: 1px solid var(--color-lbg);
+}
+
+.btn--top:hover {
+    background-color: var(--color-lbg);
+    color: var(--color-purple);
 }
 
 .btn--delete {
     border-color: var(--color-red);
     padding: 8px 16px;
     color: var(--color-red);
-    font-weight: 550;
+}
+
+.btn--delete:hover {
+    background-color: hsl(236, 23%, 40%);
+}
+
+.btn--form {
+    margin: 1rem auto 0;
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+}
+
+.btn--form:hover {
+    background-color: hsl(236, 23%, 40%);
 }
 
 .btn--edit {
     border-color: var(--color-green);
     padding: 8px 16px;
     color: var(--color-green);
-    font-weight: 550;
+}
+
+.btn--edit:hover {
+    background-color: hsl(236, 23%, 40%);
 }
 
 .btn--main {
+    margin: 1rem auto 0;
     background-color: var(--color-bg);
     border-color: var(--color-purple);
     padding: 8px 16px;
     color: var(--color-purple);
-    font-weight: 550;
 }
 
-.main-btn:hover {
+.btn--main:hover {
     background-color: var(--color-lbg);
 }
 
 
 .top-bar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: .75rem 1rem;
     color: var(--color-lbg);
     font-weight: 600;
@@ -135,7 +218,7 @@ main {
 
 .card--actions {
     display: flex;
-    margin-top: 6px;
+    margin-top: 1rem;
     justify-content: space-around;
 }
 

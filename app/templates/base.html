@@ -9,7 +9,18 @@
   <title>CRUD</title>
 </head>
 <body>
-  <div class="top-bar"><img src="{{url_for('static', filename='app-icon.png')}}" width='22' height='22'>CRUD APP</div>
+  <div class="top-bar">
+    <div class="top-bar--left">
+      <a href="{{url_for('home.index')}}">
+        <img src="{{url_for('static', filename='app-icon.png')}}" width='22' height='22'>
+        <span>CRUD APP</span>
+      </a>
+    </div>
+    <div class="top-bar--right">
+      <a href="{{url_for('alunos.ver_alunos')}}"><div class="btn btn--top">Editar Tabela</div></a>
+    </div>
+  </div>
   <main>{% block content %}{% endblock %}</main>
+  {% include '_footer.html' %}
 </body>
 </html>
