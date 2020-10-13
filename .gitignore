@@ -35,5 +35,3 @@ venv
 app.db
 *.env
 
-# SQL
-*.sql
