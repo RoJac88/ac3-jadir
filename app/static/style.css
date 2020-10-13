@@ -194,7 +194,6 @@ footer {
 }
 
 .card {
-    font-size: 1.1rem;
     font-family: 'Monaco', 'Cascadia Code', 'Cascadia', 'monospace';
     line-height: 1.5;
     background-color: var(--color-lbg);
