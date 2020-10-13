@@ -10,15 +10,13 @@ def ver_alunos():
     return render_template('view_alunos.html', alunos=alunos)
 
 
-@bp.route('/<int:ra>/', methods=['GET', 'DELETE'])
+@bp.route('/<int:ra>/', methods=['GET'])
 def ver_aluno(ra):
     aluno = read_aluno(ra)
     if not aluno or len(aluno) == 0:
         abort(404)
     if request.method == 'GET':
         return render_template('view_aluno.html', aluno=aluno)
-    delete_aluno(ra)
-    return {'message': f'aluno {ra} removido'}
 
 
 @bp.route('/<int:ra>/', methods=['PUT'])
