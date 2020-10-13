@@ -27,9 +27,10 @@ def read_aluno(ra):
     return db.query(sql, args=args, one=True)
 
 
-def create_aluno(*args):
+def create_aluno(**kwargs):
     sql = f'INSERT INTO {TNAMES["alunos"]} (ra, nome_aluno, email, logadouro, numero, cep, complemento) '
     sql += 'VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING ra'
+    args = (kwargs['ra'], kwargs.get('nome'), kwargs.get('email'), kwargs.get('log'), kwargs.get('num'), kwargs.get('cep'), kwargs.get('comp'),)
     return db.execute(sql, args=args)
 
 

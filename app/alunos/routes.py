@@ -26,9 +26,7 @@ def add_aluno(ra):
     aluno = read_aluno(ra)
     if aluno:
         return {}, 409
-    f = request.form
-    args = (ra, f['nome'], f['email'], f['log'], f['num'], f['cep'], f['comp'])
-    aluno = create_aluno(*args)
+    aluno = create_aluno(**request.form)
     return render_template('view_aluno.html', aluno=aluno)
 
 
