@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% set types = {
   'character varying': 'VARCHAR',
-  'integer': 'INT'
+  'character': 'CHAR',
+  'integer': 'INT',
+  'timestamp without time zone': 'TIMESTAMP',
+  'timestamp with time zone': 'TIMESTAMP'
 } %}
 {% block content %}
 <div class="title">Tabelas</div>
