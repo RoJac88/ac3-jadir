@@ -16,6 +16,12 @@ def read_table_columns(table_name):
     return db.query(sql, args=args)
 
 
+def read_table_size(table_name):
+    sql = "SELECT pg_total_relation_size(%s) as size;"
+    args = (table_name,)
+    return db.query(sql, args=args, one=True)
+
+
 def read_alunos():
     sql = 'SELECT * FROM ' + TNAMES['alunos']
     return db.query(sql)
