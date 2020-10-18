@@ -1,7 +1,8 @@
 const cepInput = document.querySelector('input[name="cep"]')
 cepInput.addEventListener('input', () => {
   const cepDigits = cepInput.value.replace('-', '')
-  if (cepDigits.length === 8) {
+  const cepIsDigits = /^\d+$/.test(cepDigits)
+  if (cepIsDigits && cepDigits.length === 8) {
     const uri = `https://viacep.com.br/ws/${cepDigits}/json/`
     fetch(uri)
     .then(response => response.json())
