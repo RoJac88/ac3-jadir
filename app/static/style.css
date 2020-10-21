@@ -97,7 +97,7 @@ footer {
 
 .btn {
     cursor: pointer;
-    width: fit-content;
+    width: max-content;
     padding: 4px 8px;
     color: var(--color-cyan);
     border: 2px solid var(--color-cyan);
