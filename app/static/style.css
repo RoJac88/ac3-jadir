@@ -97,7 +97,8 @@ footer {
 
 .btn {
     cursor: pointer;
-    width: max-content;
+    width: fit-content;
+    width: -moz-fit-content;
     padding: 4px 8px;
     color: var(--color-cyan);
     border: 2px solid var(--color-cyan);
@@ -232,7 +233,8 @@ footer {
 }
 
 .collection {
-    width: max-content;
+    width: fit-content;
+    width: -moz-fit-content;
     margin: .5rem auto;
 }
 
